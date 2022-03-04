@@ -9,3 +9,6 @@
 superheros = Team.create(name: "Superheros")
 niceguys = Team.create(name: "Nice Guys")
 friends = Team.create(name: "Friends")
+
+Character.create(name: "Thor", description: "Son of Odin", thumbnail: "https://static.wikia.nocookie.net/marvelcinematicuniverse/images/1/13/Thor-EndgameProfile.jpg/revision/latest?cb=20190423174911",
+team_id: 1)
