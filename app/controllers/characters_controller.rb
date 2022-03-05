@@ -7,7 +7,11 @@ class CharactersController < ApplicationController
 
     def create
         character = Character.create(character_params)
-        render json: CharacterSerializer.new(character)
+        if character.save
+            render json: CharacterSerializer.new(character)
+        else
+            render json: {errors: character.errors.full_messages}
+        end
     end
 
     private
