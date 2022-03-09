@@ -2,12 +2,12 @@ class TeamsController < ApplicationController
 
     def index
         teams = Team.all
-        render json: TeamSerializer.new(teams)
+        render json: teams
     end
 
     def create
         team = Team.create(team_params)
-        render json: TeamSerializer.new(team)
+        render json: team
     end
 
     private

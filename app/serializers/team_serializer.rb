@@ -1,4 +1,5 @@
 class TeamSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name 
+  attributes :name
+  has_many :characters
 end
