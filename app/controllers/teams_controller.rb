@@ -5,9 +5,13 @@ class TeamsController < ApplicationController
         render json: teams
     end
 
-    def create
-        team = Team.create(team_params)
-        render json: team
+    def create 
+        team = Team.new(team_params)
+        if team.save 
+            render json: team
+        else
+            render json: {error: "Couldnt be saved"}
+        end
     end
 
     private

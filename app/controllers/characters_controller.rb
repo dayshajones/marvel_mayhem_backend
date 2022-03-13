@@ -5,14 +5,21 @@ class CharactersController < ApplicationController
         render json: characters
     end
 
-    def create
-        character = Character.create(character_params)
-        if character.save
-            render json: character
-        else
-            render json: {errors: character.errors.full_messages}
-        end
-    end
+    def create 
+      character = Character.new(character_params)
+      if character.save 
+          render json: character
+      else
+          render json: {error: "Couldnt be saved"}
+      end
+  end
+
+  def destroy
+    character = Character.find_by_id(params[:id])
+    character.destroy 
+    render json: {message: "Successfully deleted #{character.name}"}
+end
+
 
     private
 
