@@ -1,14 +1,14 @@
 class TeamsController < ApplicationController
 
     def index
-        teams = Team.all
-        render json: teams
+        teams = Team.all.latest_team
+        render json: TeamSerializer.new(teams)
     end
 
-    def create 
+    def create
         team = Team.new(team_params)
         if team.save 
-            render json: team
+            render json: TeamSerializer.new(team)
         else
             render json: {error: "Couldnt be saved"}
         end
