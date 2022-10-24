@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2022_03_03_235547) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.string "thumbnail"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "team_id", null: false
+    t.bigint "team_id", null: false
     t.index ["team_id"], name: "index_characters_on_team_id"
   end
 
