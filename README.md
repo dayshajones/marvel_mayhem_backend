@@ -1,25 +1,32 @@
 # README
+Marvel Mayhem is single-page-applcation to create your own Avengers by adding a list of characters to your team.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Models
+- Characters
+    - name
+    - description
+    - thumbnail
+    - team_id
+- Destination
+    - name
 
-Things you may want to cover:
+### Associations
 
-* Ruby version
+```ruby
+Characters
 
-* System dependencies
+belongs_to :team
 
-* Configuration
+Team
 
-* Database creation
+has_many :characters
 
-* Database initialization
+```
+For frontend visit: 
 
-* How to run the test suite
+https://github.com/dayshajones/marvel_mayhem_project
 
-* Services (job queues, cache servers, search engines, etc.)
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-* Deployment instructions
-
-* ...
-# marvelmayhem_backend
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
