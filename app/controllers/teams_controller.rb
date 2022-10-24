@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
 
     def index
-        teams = Team.all.latest_team
+        teams = Team.all
         render json: TeamSerializer.new(teams)
     end
 

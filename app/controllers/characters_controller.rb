@@ -5,11 +5,6 @@ class CharactersController < ApplicationController
       render json: CharacterSerializer.new(characters)
   end
 
-  # def show
-  #   character = Character.find_by_id(params[:id])
-  #   render json: character
-  # end
-
   def create 
     character = Character.new(character_params)
     if character.save 
@@ -18,6 +13,16 @@ class CharactersController < ApplicationController
         render json: {error: "Couldnt be saved"}
     end
 end
+
+def update
+  character = Character.find_by_id(params[:id])
+  if character.update(character_params)
+      render json: character
+  else
+      render json: {error: "Couldn't Update"}
+  end
+end
+
 
 def destroy
   character = Character.find_by_id(params[:id])
