@@ -82,5 +82,7 @@ test:
 production:
   <<: *default
   database: marvelmayhem_backend_production
+  adapter: postgresql
+  host: localhost
   username: marvelmayhem_backend
   password: <%= ENV['MARVELMAYHEM_BACKEND_DATABASE_PASSWORD'] %>
