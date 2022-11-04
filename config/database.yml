@@ -84,5 +84,6 @@ production:
   database: marvelmayhem_backend_production
   adapter: postgresql
   host: localhost
+  port: 5432
   username: marvelmayhem_backend
   password: <%= ENV['MARVELMAYHEM_BACKEND_DATABASE_PASSWORD'] %>
